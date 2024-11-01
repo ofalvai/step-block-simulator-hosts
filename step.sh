@@ -49,4 +49,4 @@ printf "\n---------\n\n"
 export DENO_NO_UPDATE_CHECK=1
 "${DENO_INSTALL_DIR}"/deno run \
     --allow-read --allow-write --allow-env --allow-net --allow-run \
-    step/main.ts
+    "${BITRISE_STEP_SOURCE_DIR}"/step/main.ts
