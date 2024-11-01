@@ -6,7 +6,6 @@ description: |-
 website: https://github.com/ofalvai/block-simulator-hosts
 source_code_url: https://github.com/ofalvai/block-simulator-hosts
 support_url: https://github.com/ofalvai/block-simulator-hosts/issues
-
 project_type_tags:
 - ios
 - cordova
