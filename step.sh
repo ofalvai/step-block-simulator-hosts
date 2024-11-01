@@ -59,7 +59,8 @@ echo "☑️ Dependencies installed in $(bc <<<"$end_time-$start_time") seconds"
 
 printf "\n---------\n\n"
 export DENO_NO_UPDATE_CHECK=1
-sudo --preserve-env \ # sudo is only required for this specific step because it edits /etc/hosts
+# sudo is only required for this specific step because it edits /etc/hosts
+sudo --preserve-env \
     "${DENO_INSTALL_DIR}"/deno run \
     --allow-read --allow-write --allow-env --allow-net --allow-run \
     "$STEP_ENTRYPOINT"
