@@ -37,13 +37,13 @@ if [[ ! -d "${DENO_INSTALL_DIR}" ]]; then
     DENO_URL="https://dl.deno.land/release/v${DENO_VERSION}/deno-${TARGET_TUPLE}.zip"
     echo "Downloading $DENO_URL..."
 
-    start_time="$(date -u +%s.%2N)"
+    start_time="$(date -u +%s.%3N)"
     mkdir -p "${DENO_INSTALL_DIR}"
     curl --retry 5 -fsSL "$DENO_URL" -o "${DENO_INSTALL_DIR}"/deno.zip
     unzip "${DENO_INSTALL_DIR}"/deno.zip -d "${DENO_INSTALL_DIR}"
     rm "${DENO_INSTALL_DIR}"/deno.zip
     chmod +x "${DENO_INSTALL_DIR}"/deno
-    end_time="$(date -u +%s.%2N)"
+    end_time="$(date -u +%s.%3N)"
 
     echo "☑️ Deno installed in $(bc <<<"$end_time-$start_time") seconds"
 else
@@ -52,9 +52,9 @@ fi
 
 
 
-start_time="$(date -u +%s.%2N)"
+start_time="$(date -u +%s.%3N)"
 "${DENO_INSTALL_DIR}"/deno install --config "$STEP_DENO_CONFIG"
-end_time="$(date -u +%s.%2N)"
+end_time="$(date -u +%s.%3N)"
 echo "☑️ Dependencies installed in $(bc <<<"$end_time-$start_time") seconds"
 
 printf "\n---------\n\n"
