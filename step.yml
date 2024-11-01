@@ -1,0 +1,39 @@
+title: Block simulator hosts
+summary: Block various hosts on the build VM to make Apple simulators faster.
+description: |-
+  Block various hosts on the build VM to make Apple simulators faster. Use at your own risk.
+
+website: https://github.com/ofalvai/block-simulator-hosts
+source_code_url: https://github.com/ofalvai/block-simulator-hosts
+support_url: https://github.com/ofalvai/block-simulator-hosts/issues
+
+project_type_tags:
+- ios
+- cordova
+- ionic
+- react-native
+- flutter
+type_tags:
+- testing
+
+toolkit:
+  bash:
+    entry_file: step.sh
+
+run_if: .IsCI
+
+inputs:
+- hosts: |-
+    api.smoot.apple.com
+    bag.itunes.apple.com
+    cdn.smoot.apple.com
+    gateway.icloud.com
+    gdmf.apple.com
+    mesu.apple.com
+    updates.cdn-apple.com
+    updates-http.cdn-apple.com
+    uts-api.itunes.apple.com
+  opts:
+    title: Hosts
+    summary: List of hosts to block using the hosts file
+    is_required: true
