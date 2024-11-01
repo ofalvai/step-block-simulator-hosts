@@ -1,4 +1,4 @@
-import { red, yellow, green, reset } from "@std/fmt/colors";
+import { red, yellow, green, reset, cyan } from "@std/fmt/colors";
 
 const HOSTS_FILE = "/etc/hosts";
 
@@ -11,7 +11,8 @@ if (inputHosts.length === 0) {
     Deno.exit(1);
 }
 
-console.log(`Editing file ${HOSTS_FILE}:`);
+console.log()
+console.log(`Editing ${cyan(HOSTS_FILE)}:`);
 
 const hostsFileContentBefore = Deno.readTextFileSync(HOSTS_FILE);
 for (const host of inputHosts) {
